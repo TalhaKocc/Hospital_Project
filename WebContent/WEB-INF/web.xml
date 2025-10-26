@@ -4,12 +4,6 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.xhtml</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.xhtml</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
@@ -32,4 +26,14 @@
   <listener>
     <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
   </listener>
+  
+  <filter>
+  	<filter-name>CharacterFilter</filter-name>
+  	<filter-class>com.hospitalproject.filter.CharacterFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>CharacterFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

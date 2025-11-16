@@ -15,7 +15,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class AppointmentBean {
 	private int id;
+	private LocalDateTime appointmentDateTime;
 	private DoctorBean doctor;
 	private PatientBean patient;
-	private LocalDateTime appointmentDateTime;
+
 }

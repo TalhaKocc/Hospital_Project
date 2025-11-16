@@ -11,9 +11,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DoctorBean {
 	private int id;
-	private UserBean user;
-	private String name;
+	private String phoneNumber;
+	private String roomNumber;
 	private String gender;
+	private double salary;
+	private UserBean user;	
 	private DepartmentBean department;
-	
 }

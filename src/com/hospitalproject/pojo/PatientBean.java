@@ -13,10 +13,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PatientBean {
 	private int id;
-	private UserBean user;
-	private String national_id;
-	private String name;
 	private String gender;
-	private Date birth ;
-	
+	private String national_id;	
+	private String phoneNumber;
+	private Date birthDate ;
+	private UserBean user;
 }

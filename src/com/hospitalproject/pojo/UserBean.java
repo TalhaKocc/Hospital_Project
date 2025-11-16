@@ -11,8 +11,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UserBean {
 	private int id;
-	private String eposta;
+	private String name;
+	private String surname;
+	private String email;
 	private String password;
 	private String role;
-
 }

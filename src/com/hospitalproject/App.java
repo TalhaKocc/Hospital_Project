@@ -23,18 +23,8 @@ public class App {
 		
 		
 		
-		UpdateDoctorDto updateDoctorDto = new UpdateDoctorDto();
-		updateDoctorDto.setDoctorId(16);
-		updateDoctorDto.setUserId(65);
-		updateDoctorDto.setDoctorName("Hafsa");
-		updateDoctorDto.setDoctorSurname("Koç");
-		updateDoctorDto.setDoctorEmail("hafsa.koc@hastane.com");
-		updateDoctorDto.setDoctorPassword("hafsa1234");
-		updateDoctorDto.setDoctorPhoneNumber("05412458978");
-		updateDoctorDto.setDoctorRoomNumber("HAFSA001");
-		
 		DoctorDao doctorDao = new DoctorDao();
-		doctorDao.updateDoctor(updateDoctorDto);
+		doctorDao.updateSalaryDoctor(15, 100_000.00);
 		
 
 	}

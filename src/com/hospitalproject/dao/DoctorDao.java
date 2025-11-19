@@ -81,4 +81,29 @@ public class DoctorDao {
 		DataBase.transaction.commit();
 	}
 	
+	public void updateSalaryDoctor(Integer doctorId,Double salary) {
+		DataBase.transaction.begin();
+		
+		Doctor doctor = DataBase.entityManager.find(Doctor.class, doctorId);
+		doctor.setSalary(salary);
+		
+		DataBase.entityManager.merge(doctor);
+		DataBase.transaction.commit();
+		
+	}
+	
+	public void deleteDoctor(Integer doctorId) {
+		
+		DataBase.transaction.begin();
+			
+		Doctor doctor = DataBase.entityManager.find(Doctor.class, doctorId);
+		
+		User user = doctor.getUser();
+		
+		DataBase.entityManager.remove(doctor);
+		DataBase.entityManager.remove(user);
+		
+		DataBase.transaction.commit();
+		
+	}
 }

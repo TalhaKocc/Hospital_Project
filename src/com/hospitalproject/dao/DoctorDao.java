@@ -4,11 +4,13 @@ import java.util.List;
 
 import com.hospitalproject.dto.AddDoctorDto;
 import com.hospitalproject.dto.ListAllDoctorDto;
+import com.hospitalproject.dto.UpdateDoctorDto;
 import com.hospitalproject.model.DataBase;
 import com.hospitalproject.model.Department;
 import com.hospitalproject.model.Doctor;
 import com.hospitalproject.model.User;
 import com.hospitalproject.model.User.ROLE;
+
 
 import jakarta.persistence.TypedQuery;
 
@@ -60,4 +62,23 @@ public class DoctorDao {
 		}
 	}
 
+	public void updateDoctor(UpdateDoctorDto updateDoctor) {
+		DataBase.transaction.begin();
+		
+		User user = DataBase.entityManager.find(User.class, updateDoctor.getUserId());
+		
+		user.setName(updateDoctor.getDoctorName());
+		user.setSurname(updateDoctor.getDoctorSurname());
+		user.setEmail(updateDoctor.getDoctorEmail());
+		user.setPassword(updateDoctor.getDoctorPassword());
+		DataBase.entityManager.merge(user);
+		
+		Doctor doctor = DataBase.entityManager.find(Doctor.class, updateDoctor.getDoctorId());
+		doctor.setPhoneNumber(updateDoctor.getDoctorPhoneNumber());
+		doctor.setRoomNumber(updateDoctor.getDoctorRoomNumber());
+		DataBase.entityManager.merge(doctor);
+		
+		DataBase.transaction.commit();
+	}
+	
 }

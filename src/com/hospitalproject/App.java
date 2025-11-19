@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.hospitalproject.dao.DoctorDao;
 import com.hospitalproject.dto.AddDoctorDto;
-import com.hospitalproject.dto.ListAllDoctorDto;
+import com.hospitalproject.dto.UpdateDoctorDto;
 import com.hospitalproject.model.Doctor.GENDER;
 
 
@@ -23,18 +23,19 @@ public class App {
 		
 		
 		
-		AddDoctorDto addDoctorDto = new AddDoctorDto();
-		addDoctorDto.setDoctorName("Hafsa");
-		addDoctorDto.setDoctorSurname("Koç");
-		addDoctorDto.setDoctorEmail("hafsa.koc@hastane.com");
-		addDoctorDto.setDoctorPassword("hafsa123");
-		addDoctorDto.setDoctorDepartment("Dahiliye");
-		addDoctorDto.setDoctorPhoneNumber("05412458978");
-		addDoctorDto.setDoctorRoomNumber("HAF001");
-		addDoctorDto.setDoctorGender(GENDER.Female);
-		addDoctorDto.setDoctorSalary(100_000.10);
+		UpdateDoctorDto updateDoctorDto = new UpdateDoctorDto();
+		updateDoctorDto.setDoctorId(16);
+		updateDoctorDto.setUserId(65);
+		updateDoctorDto.setDoctorName("Hafsa");
+		updateDoctorDto.setDoctorSurname("Koç");
+		updateDoctorDto.setDoctorEmail("hafsa.koc@hastane.com");
+		updateDoctorDto.setDoctorPassword("hafsa1234");
+		updateDoctorDto.setDoctorPhoneNumber("05412458978");
+		updateDoctorDto.setDoctorRoomNumber("HAFSA001");
 		
-		DoctorDao dao = new DoctorDao();
-		dao.addDoctor(addDoctorDto);
+		DoctorDao doctorDao = new DoctorDao();
+		doctorDao.updateDoctor(updateDoctorDto);
+		
+
 	}
 }

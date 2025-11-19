@@ -18,9 +18,9 @@ public class Doctor {
 	@Column(name = "doctor_id")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
-	@Column(name = "phone")
+	@Column(name = "phone_number")
 	private String phoneNumber;
 	
 	@Column(name = "room_number")
@@ -31,7 +31,7 @@ public class Doctor {
 	private GENDER gender;
 	
 	@Column(name = "salary")
-	private double salary;
+	private Double salary;
 	
 	@OneToOne
 	@JoinColumn(name = "user_id",referencedColumnName = "user_id")
@@ -45,8 +45,8 @@ public class Doctor {
 	List<Appointment> listAppointment;
 	
 	public enum GENDER {
-		Erkek,
-		Kadın
+		Male,
+		Female
 	}
 
 	@Override

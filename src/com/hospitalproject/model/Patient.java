@@ -21,17 +21,17 @@ public class Patient {
 	@Column(name = "patient_id")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "patient_gender")
 	private GENDER gender;
 	
 	@Column(name = "national_id")
-	private long nationalId;
+	private String nationalId;
 	
 	@Column(name = "phone_number")
-	private long phoneNumber;
+	private String phoneNumber;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "date_birth")
@@ -45,8 +45,8 @@ public class Patient {
 	private User user;
 
 	public enum GENDER{
-		Erkek,
-		Kadın
+		Male,
+		Female
 	}
 
 }

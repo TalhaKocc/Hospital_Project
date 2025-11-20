@@ -1,6 +1,8 @@
 package com.hospitalproject.model;
 
-import java.util.Date;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -19,13 +21,11 @@ public class Appointment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(name = "appointment_date")
-	private Date appointmentDate;
+	private LocalDate appointmentDate;
 	
-	@Temporal(TemporalType.TIME)
 	@Column(name = "appointment_time")
-	private Date appointmentTimeDate;
+	private LocalDateTime appointmentTimeDate;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "appointment_status")

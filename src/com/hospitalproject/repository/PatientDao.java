@@ -1,4 +1,4 @@
-package com.hospitalproject.dao;
+package com.hospitalproject.repository;
 
 
 import java.util.List;
@@ -14,6 +14,7 @@ import com.hospitalproject.model.User.ROLE;
 
 public class PatientDao {
 	
+	// admin panelinde sisteme kayıtl tüm hastaları listeleme sorgusu
 	public List<ListAllPatientDto> listAllPatient() {
 		String listAllPatientQuery ="SELECT new com.hospitalproject.dto.ListAllPatientDto"+
 					 "(p.id, u.name, u.surname,p.gender, p.nationalId, p.phoneNumber, p.birthDate) "+
@@ -24,6 +25,7 @@ public class PatientDao {
 
 	}
 
+	// hasta tarafından sisteme kayıt olma sorgusu
 	public void addPatient(AddPatientDto addPatientDto) {
 		try {
 			
@@ -51,6 +53,7 @@ public class PatientDao {
 		}
 	}
 
+	// hasta panelinde hastanın kişisel bilgilerini güncelleme sorgusu
 	public void updatePatient(UpdatePatientDto updatePatientDto) {
 			
 			DataBase.transaction.begin();
@@ -72,6 +75,7 @@ public class PatientDao {
 			DataBase.transaction.commit();
 	}
 
+	// hasta panelinde hastanın silinmesi 
 	public void removePatient(Integer patientId) {
 		DataBase.transaction.begin();
 		

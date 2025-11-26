@@ -1,6 +1,6 @@
 package com.hospitalproject;
 
-import com.hospitalproject.dao.PatientDao;
+import com.hospitalproject.repository.PatientDao;
 
 public class App {
 

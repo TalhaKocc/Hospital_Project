@@ -71,13 +71,13 @@
 
                 <!-- Sil -->
                 <h:commandButton value="Sil"
-                           
+                           		 action ="#{doctorBean.deleteDoctor(d.doctorId)}"
                                  styleClass="btn btn-danger btn-sm me-1"
                                  onclick="return confirm('Doktor silinsin mi?');"/>
 
                 <!-- Maaş Güncelle -->
                 <h:commandButton value="Maaş Güncelle"
-                                 
+                                 action="#{doctorBean.goToSalaryPage(d.doctorId)}"
                                  styleClass="btn btn-warning btn-sm"/>
             </h:column>
 

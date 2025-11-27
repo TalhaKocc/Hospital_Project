@@ -4,23 +4,23 @@
 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core">
 	  
-<head>
+<h:head>
 	<title>Hastane Projesi</title>
-</head>
-<body>
+</h:head>
+<h:body>
 	<h:form>
 		<h3>Login Page</h3>
-		<h:outputText value="Eposta:"/>
-		<h:inputText id="eposta" value="#{loginBean.eposta}"/>
-		<h:message for="eposta"/>
+		<h:outputText value="Email:"/>
+		<h:inputText id="email" value="#{userService.email}"/>
+		<h:message for="email"/>
 		<br></br><br></br>
 		
 		<h:outputText value="Password:"/>
-		<h:inputSecret id="password" value="#{loginBean.password}"/>
+		<h:inputSecret id="password" value="#{userService.password}"/>
 		<h:message for="password"/>
 		<br></br><br></br>
 		
-		<h:commandButton value="Giriş" action="#{loginBean.login}"/>
+		<h:commandButton value="Giriş" action="#{userService.login}"/>
 	</h:form>
-</body>
+</h:body>
 </html>	  

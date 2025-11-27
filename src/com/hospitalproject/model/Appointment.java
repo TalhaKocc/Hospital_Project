@@ -1,11 +1,22 @@
 package com.hospitalproject.model;
 
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Date;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -22,10 +33,10 @@ public class Appointment {
 	private Integer id;
 	
 	@Column(name = "appointment_date")
-	private LocalDate appointmentDate;
+	private Date appointmentDate;
 	
 	@Column(name = "appointment_time")
-	private LocalDateTime appointmentDateTime;
+	private Date appointmentDateTime;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "appointment_status")

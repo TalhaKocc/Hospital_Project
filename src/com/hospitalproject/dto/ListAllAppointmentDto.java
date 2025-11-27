@@ -1,12 +1,13 @@
 package com.hospitalproject.dto;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
+import java.util.Date;
 
 import com.hospitalproject.model.Appointment;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -17,16 +18,12 @@ public class ListAllAppointmentDto {
 	private String patientName;
 	private String patientSurname;
 	private String patientNationalId;
-	private LocalDate patientAge;
+	private Date patientBirthDate;
 	private String doctorName;
 	private String doctorSurname;
 	private String departmentName;
-	private LocalDate appointmentDate;
-	private LocalDateTime appointmentTime;
+	private Date appointmentDate;
+	private Date appointmentTime;
 	private Appointment.STATUS appointmentStatus;
 
-	public Integer getPatientAge() {
-		if(patientAge == null) return null;
-		return Period.between(patientAge, LocalDate.now()).getYears();
-	}
 }

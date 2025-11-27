@@ -1,12 +1,14 @@
 package com.hospitalproject.dto;
 
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import com.hospitalproject.model.Patient;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter

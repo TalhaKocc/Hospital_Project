@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Randevular - Admin</title>
+</h:head>
+
+<h:body>
+
+    <h2>Randevu Listesi</h2>
+
+    <h:form>
+        <h:dataTable value="#{appointmentBean.listPatientForAdmin}" var="a"
+                     border="1" cellpadding="6" style="width:100%; border-collapse: collapse;">
+
+            <!-- Hasta Adı -->
+            <h:column>
+                <f:facet name="header">Hasta Adı</f:facet>
+                #{a.patientName}
+            </h:column>
+
+            <!-- Hasta Soyadı -->
+            <h:column>
+                <f:facet name="header">Hasta Soyadı</f:facet>
+                #{a.patientSurname}
+            </h:column>
+
+            <!-- Hasta T.C. -->
+            <h:column>
+                <f:facet name="header">T.C. No</f:facet>
+                #{a.patientNationalId}
+            </h:column>
+
+            <!-- Yaş -->
+            <h:column>
+                <f:facet name="header">Yaş</f:facet>
+                #{a.patientBirthDate}
+            </h:column>
+
+            <!-- Doktor Adı -->
+            <h:column>
+                <f:facet name="header">Doktor Adı</f:facet>
+                #{a.doctorName}
+            </h:column>
+
+            <!-- Doktor Soyadı -->
+            <h:column>
+                <f:facet name="header">Doktor Soyadı</f:facet>
+                #{a.doctorSurname}
+            </h:column>
+
+            <!-- Departman -->
+            <h:column>
+                <f:facet name="header">Departman</f:facet>
+                #{a.departmentName}
+            </h:column>
+
+            <!-- Randevu Tarihi -->
+            <h:column>
+                <f:facet name="header">Tarih</f:facet>
+                <h:outputText value="#{a.appointmentDate}">
+                    <f:convertDateTime pattern="dd.MM.yyyy" />
+                </h:outputText>
+            </h:column>
+
+            <!-- Randevu Saati -->
+            <h:column>
+                <f:facet name="header">Saat</f:facet>
+                <h:outputText value="#{a.appointmentTime}">
+                     <f:convertDateTime pattern="HH:mm" timeZone="Europe/Istanbul"/>
+                </h:outputText>
+            </h:column>
+
+            <!-- Durum -->
+            <h:column>
+                <f:facet name="header">Durum</f:facet>
+                #{a.appointmentStatus}
+            </h:column>
+
+        </h:dataTable>
+    </h:form>
+
+</h:body>
+</html>

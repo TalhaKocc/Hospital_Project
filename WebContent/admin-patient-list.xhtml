@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Hasta Listesi</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+</h:head>
+
+<h:body>
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">📋 Hasta Listesi</h2>
+
+    <h:form>
+        <h:dataTable value="#{patientBean.listPatientForAdmin}"
+                     var="p"
+                     styleClass="table table-bordered table-hover">
+
+            <!-- Hasta ID -->
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                #{p.patientId}
+            </h:column>
+
+            <!-- Ad -->
+            <h:column>
+                <f:facet name="header">Ad</f:facet>
+                #{p.patientName}
+            </h:column>
+
+            <!-- Soyad -->
+            <h:column>
+                <f:facet name="header">Soyad</f:facet>
+                #{p.patientSurname}
+            </h:column>
+
+            <!-- Cinsiyet -->
+            <h:column>
+                <f:facet name="header">Cinsiyet</f:facet>
+                #{p.patientGender}
+            </h:column>
+
+            <!-- TC -->
+            <h:column>
+                <f:facet name="header">TC</f:facet>
+                #{p.nationalId}
+            </h:column>
+
+            <!-- Telefon -->
+            <h:column>
+                <f:facet name="header">Telefon</f:facet>
+                #{p.patientPhoneNumber}
+            </h:column>
+
+            <!-- Doğum Tarihi -->
+            <h:column>
+                <f:facet name="header">Doğum Tarihi</f:facet>
+                <h:outputText value="#{p.patientBirthDate}">
+                    <f:convertDateTime pattern="dd.MM.yyyy"/>
+                </h:outputText>
+            </h:column>
+
+            <!-- Sil Butonu -->
+            <h:column>
+                <f:facet name="header">İşlem</f:facet>
+
+                <h:commandButton value="Sil"
+                                 styleClass="btn btn-danger btn-sm"
+                                 
+                                 onclick="return confirm('Silmek istediğine emin misin?');" />
+            </h:column>
+
+        </h:dataTable>
+    </h:form>
+
+</div>
+
+</h:body>
+</html>

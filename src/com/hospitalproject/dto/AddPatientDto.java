@@ -2,6 +2,7 @@ package com.hospitalproject.dto;
 
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import com.hospitalproject.model.Patient;
 
@@ -19,5 +20,5 @@ public class AddPatientDto {
 	private Patient.GENDER patientGender;
 	private String patientNationalId;
 	private String patientPhoneNumber;
-	private LocalDate patientBirthDate;
+	private Date patientBirthDate;
 }

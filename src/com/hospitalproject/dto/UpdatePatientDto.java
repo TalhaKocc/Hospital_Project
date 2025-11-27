@@ -1,6 +1,6 @@
 package com.hospitalproject.dto;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import lombok.*;
 
@@ -16,6 +16,6 @@ public class UpdatePatientDto {
 	private String patientPassword;
 	private String patientNationalId;
 	private String patientPhoneNumber;
-	private LocalDate patientBirthDate;
+	private Date patientBirthDate;
 	private Integer userId;
 }

@@ -1,4 +1,4 @@
-package com.hospitalproject.service;
+package com.hospitalproject.controller;
 
 
 import javax.faces.bean.ManagedBean;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @ManagedBean
 @SessionScoped
 @Getter @Setter
-public class UserService {
+public class UserBean{
 	private String email;
 	private String password;
 	private User loggedUser;

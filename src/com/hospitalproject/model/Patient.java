@@ -1,6 +1,6 @@
 package com.hospitalproject.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -34,7 +34,7 @@ public class Patient {
 	private String phoneNumber;
 	
 	@Column(name = "date_birth")
-	private LocalDate birthDate;
+	private Date birthDate;
 	
 	@OneToMany(mappedBy = "patient")
 	List<Appointment> listAppointment;
